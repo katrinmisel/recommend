@@ -24,9 +24,11 @@ def recommend_articles(user_id, model, user_item_matrix, n_articles=5):
     # get the article ids from the recommendations
     return recommendations[0]
 
-st.title('Recommendation System')
 
-text = st.text_input(label='Enter your user ID')
+st.image('content.png', width=500)
+st.title('My Content Recommendation')
+
+text = st.text_input(label='Enter a user ID:')
 
 st.write("")
 
@@ -34,4 +36,5 @@ if st.button('Predict'):
     #
     recommendation = recommend_articles(int(text), model, user_item_matrix)
     recommendation = str(recommendation) 
-    st.subheader('Recommended articles for user {}'.format(recommendation))
+    st.subheader('Recommended articles for user with ID {} are:'.format(text))
+    st.subheader(recommendation)
