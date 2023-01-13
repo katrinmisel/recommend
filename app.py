@@ -25,7 +25,7 @@ def recommend_articles(user_id, model, user_item_matrix, n_articles=5):
     return recommendations[0]
 
 
-st.image('content.png', width=500)
+st.image('content.PNG', width=500)
 st.title('My Content Recommendation')
 
 text = st.text_input(label='Enter a user ID:')
