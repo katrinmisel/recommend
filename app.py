@@ -30,7 +30,7 @@ def recommend_articles(user_id, model, user_item_matrix):
 st.image('content.PNG', width=500)
 st.title('My Content Recommendation')
 
-text = st.text_input(label='Enter a user ID between 0 and {}:'.format(nb_users)))
+text = st.text_input(label='Enter a user ID between 0 and {}:'.format(nb_users))
 
 st.write("")
 
