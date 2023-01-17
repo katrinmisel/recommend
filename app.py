@@ -15,8 +15,10 @@ cols = clicks['click_article_id']
 data = np.ones(len(clicks))
 user_item_matrix = coo_matrix((data, (rows, cols))).tocsr()
 
+nb_users = clicks.user_id.max()
+
 # define the function to recommend new articles to a user
-def recommend_articles(user_id, model, user_item_matrix, n_articles=5):
+def recommend_articles(user_id, model, user_item_matrix):
     # get the row of the user in the user-item matrix
     user_row = user_item_matrix.getrow(user_id)
     # get the recommendations for the user
@@ -28,7 +30,7 @@ def recommend_articles(user_id, model, user_item_matrix, n_articles=5):
 st.image('content.PNG', width=500)
 st.title('My Content Recommendation')
 
-text = st.text_input(label='Enter a user ID:')
+text = st.text_input(label='Enter a user ID between 0 and {}:'.format(nb_users)))
 
 st.write("")
 
